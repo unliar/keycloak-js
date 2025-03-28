@@ -1,0 +1,53 @@
+{
+  "name": "keycloak-js",
+  "version": "999.0.0-SNAPSHOT",
+  "type": "module",
+  "description": "A client-side JavaScript OpenID Connect library that can be used to secure web applications.",
+  "scripts": {
+    "lint": "standard",
+    "guides": "node docs/guides/guides.mjs $npm_package_version",
+    "build": "npx babel src --out-dir lib --extensions \".js\" && cp src/*.d.ts lib/"
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/keycloak.d.ts",
+      "default": "./lib/keycloak.js"
+    },
+    "./authz": {
+      "types": "./lib/keycloak-authz.d.ts",
+      "default": "./lib/keycloak-authz.js"
+    }
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keycloak/keycloak.git"
+  },
+  "author": "Keycloak",
+  "license": "Apache-2.0",
+  "homepage": "https://www.keycloak.org",
+  "keywords": [
+    "keycloak",
+    "sso",
+    "oauth",
+    "oauth2",
+    "authentication"
+  ],
+  "standard": {
+    "ignore": [
+      "lib/*"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.27.0",
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "jszip": "^3.10.1",
+    "standard": "^17.1.2"
+  }
+}
