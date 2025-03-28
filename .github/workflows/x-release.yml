@@ -26,7 +26,6 @@ defaults:
     shell: bash
 
 jobs:
-
   release-impl:
     runs-on: ubuntu-latest
     steps:
@@ -68,6 +67,7 @@ jobs:
 
       - name: Create package tarball
         run: |
+          npm build
           npm pack
 
       - name: Rename nightly package tarball

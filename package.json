@@ -5,7 +5,8 @@
   "description": "A client-side JavaScript OpenID Connect library that can be used to secure web applications.",
   "scripts": {
     "lint": "standard",
-    "guides": "node docs/guides/guides.mjs $npm_package_version"
+    "guides": "node docs/guides/guides.mjs $npm_package_version",
+    "build": "npx babel src --out-dir lib --extensions \".js\" && cp src/*.d.ts lib/"
   },
   "exports": {
     ".": {
@@ -43,6 +44,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.27.0",
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
     "jszip": "^3.10.1",
     "standard": "^17.1.2"
   }
